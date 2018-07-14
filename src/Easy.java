@@ -56,7 +56,7 @@ public class Easy {
     }
 
     /**
-     * 804. Unique Morse Code Words
+     * 804. Unique Morse Code Words(Flagged)
      * Question Description:
      * International Morse Code defines a standard encoding where each letter is mapped to a series of dots and dashes,
      * as follows: "a" maps to ".-", "b" maps to "-...", "c" maps to "-.-.", and so on.
@@ -87,7 +87,7 @@ public class Easy {
 
     /**
      *
-     * 832. Flipping an Image
+     * 832. Flipping an Image(Flagged)
      *
      * Question Description:
      * Given a binary matrix A, we want to flip the image horizontally, then invert it, and return the resulting image.
@@ -114,7 +114,7 @@ public class Easy {
 
     /**
      *
-     * 461. Hamming Distance
+     * 461. Hamming Distance(Flagged)
      *
      * Question Description:
      * The Hamming distance between two integers is the number of positions at which the corresponding bits are different.
@@ -128,6 +128,99 @@ public class Easy {
 
     public int hammingDistance(int x, int y) {
         return Integer.bitCount(x^y);
+
+    }
+
+    /**
+     *
+     * 657. Judge Route Circle
+     *
+     * Question Description:
+     * Initially, there is a Robot at position (0, 0). Given a sequence of its moves, judge if this robot makes a circle,
+     * which means it moves back to the original place.
+     * The move sequence is represented by a string. And each move is represent by a character. The valid robot moves
+     * are R (Right), L (Left), U (Up) and D (down). The output should be true or false representing whether the robot
+     * makes a circle.
+     *
+     * Date:2018/7/14 10:00 AM
+     * @param moves
+     * @return
+     */
+    public boolean judgeCircle(String moves) {
+        char[] movesList = moves.toCharArray();
+        int[] count = {0, 0, 0, 0};
+        for(int i=0; i<movesList.length; i++){
+            switch (movesList[i]){
+                case 'U':
+                    count[0]+=1;
+                    break;
+                case 'D':
+                    count[1]+=1;
+                    break;
+                case 'L':
+                    count[2]+=1;
+                    break;
+                case 'R':
+                    count[3]+=1;
+                    break;
+            }
+        }
+        if(count[0]!=count[1] || count[2]!=count[3]){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+
+
+    /**
+     *
+     * 852. Peak Index in a Mountain Array
+     *
+     * Question Description:
+     * Let's call an array A a mountain if the following properties hold:
+     * A.length >= 3
+     * There exists some 0 < i < A.length - 1 such that A[0] < A[1] < ... A[i-1] < A[i] > A[i+1] > ... > A[A.length - 1]
+     * Given an array that is definitely a mountain, return any i such that A[0] < A[1] < ... A[i-1] < A[i] > A[i+1] >
+     * ... > A[A.length - 1].
+     *
+     * @param A
+     * @return
+     */
+    public int peakIndexInMountainArray(int[] A) {
+        int temp = -1;
+
+        for(int i=0; i<A.length; i++){
+            if(A[i]>temp){
+                temp = A[i];
+            }
+            else{
+                return i-1;
+            }
+        }
+        return 0;
+    }
+
+    /**
+     * 867. Transpose Matrix
+     *
+     * Question Description:
+     * Given a matrix A, return the transpose of A.
+     * The transpose of a matrix is the matrix flipped over it's main diagonal, switching the row and column indices of
+     * the matrix.
+     *
+     * @param A
+     * @return
+     */
+    public int[][] transpose(int[][] A) {
+        int[][] transpose = new int[A[0].length][A.length];
+        for(int i=0; i<A.length; i++){
+            for(int j=0; j<A[i].length; j++){
+                transpose[j][i] = A[i][j];
+            }
+        }
+        return transpose;
 
     }
 

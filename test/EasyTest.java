@@ -36,9 +36,31 @@ public class EasyTest {
     }
 
     @Test
-    public  void hammingDistanceTest(){
+    public void hammingDistanceTest(){
         int result = test.hammingDistance(1,4);
         assertEquals(2, result);
+    }
+
+    @Test
+    public void judgeCircleTest(){
+        boolean result = test.judgeCircle("UDDLLRRU");
+        assertEquals(true, result);
+    }
+
+    @Test
+    public void peakIndexInMountainArrayTest(){
+        int[] input = {0,10,5,2};
+        int result = test.peakIndexInMountainArray(input);
+        assertEquals(1, result);
+    }
+
+    @Test
+    public void transposeTest(){
+        int[][] input = {{1,2,3},{4,5,6},{7,8,9}};
+        int[][] result = test.transpose(input);
+        int[][] expected = {{1,4,7},{2,5,8},{3,6,9}};
+        assertArrayEquals(expected,result);
+
     }
 
 
