@@ -78,6 +78,11 @@ public class EasyTest {
         assertEquals(4, result);
     }
 
+    @Test
+    public void binaryGapTest(){
+        int result5 = test.binaryGap(13);
+        assertEquals(2, result5);
+    }
 
 
 }

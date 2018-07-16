@@ -288,6 +288,47 @@ public class Easy {
     }
 
 
+    /**
+     * 868. Binary Gap
+     * Question Description:
+     * Given a positive integer N, find and return the longest distance between two consecutive 1's in the binary
+     * representation of N.
+     * If there aren't two consecutive 1's, return 0.
+     *
+     * Date:2018/7/16 9:45 AM
+     * @param N
+     * @return
+     */
+    public int binaryGap(int N) {
+        String trans = Integer.toBinaryString(N);
+        char[] charList = trans.toCharArray();
+        boolean start = false;
+        int maxGap = 0;
+        int gap = 0;
+        for(int i=0; i<charList.length; i++){
+            if(charList[i]=='1' && start==false){
+                start = true;
+            }
+            else if(charList[i]=='0' && start==true){
+                gap+=1;
+            }
+            else if(charList[i]=='1' && start==true){
+                gap+=1;
+                start = false;
+                if(gap>maxGap){
+                    maxGap = gap;
+                }
+                i-=1;
+                gap=0;
+            }
+            else{
+                continue;
+            }
+        }
+        return maxGap;
+    }
+
+
 
 
 
