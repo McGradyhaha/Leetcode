@@ -221,8 +221,50 @@ public class Easy {
             }
         }
         return transpose;
-
     }
+
+
+    /**
+     * 728. Self Dividing Numbers
+     *
+     * Question Description:
+     * A self-dividing number is a number that is divisible by every digit it contains.
+     * For example, 128 is a self-dividing number because 128 % 1 == 0, 128 % 2 == 0, and 128 % 8 == 0.
+     * Also, a self-dividing number is not allowed to contain the digit zero.
+     * Given a lower and upper number bound, output a list of every possible self dividing number, including the bounds
+     * if possible.
+     *
+     * @param left
+     * @param right
+     * @return
+     */
+    public List<Integer> selfDividingNumbers(int left, int right) {
+        List<Integer> dividedList = new ArrayList<>();
+
+        for(int i=left; i<right+1; i++){
+            boolean flag = true;
+            char[] tmp = Integer.toString(i).toCharArray();
+            for(int j=0; j<tmp.length; j++){
+                int test = Character.getNumericValue(tmp[j]);
+                if(test==0){
+                    flag = false;
+                    break;
+                }
+                else{
+                    if(i%test !=0) {
+                        flag = false;
+                        break;
+                    }
+                }
+            }
+            if(flag == true){
+                dividedList.add(i);
+            }
+        }
+        return dividedList;
+    }
+
+
 
 
 }
