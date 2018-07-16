@@ -185,6 +185,7 @@ public class Easy {
      * Given an array that is definitely a mountain, return any i such that A[0] < A[1] < ... A[i-1] < A[i] > A[i+1] >
      * ... > A[A.length - 1].
      *
+     * Date:2018/7/14 10:15 AM
      * @param A
      * @return
      */
@@ -210,6 +211,7 @@ public class Easy {
      * The transpose of a matrix is the matrix flipped over it's main diagonal, switching the row and column indices of
      * the matrix.
      *
+     * Date:2018/7/14 10:30 AM
      * @param A
      * @return
      */
@@ -234,6 +236,7 @@ public class Easy {
      * Given a lower and upper number bound, output a list of every possible self dividing number, including the bounds
      * if possible.
      *
+     * Date:2018/7/16 9:00 AM
      * @param left
      * @param right
      * @return
