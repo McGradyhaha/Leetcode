@@ -71,6 +71,13 @@ public class EasyTest {
         assertEquals(expected,result);
     }
 
+    @Test
+    public void arrayPairSumTest(){
+        int[] input = {1,4,3,2};
+        int result = test.arrayPairSum(input);
+        assertEquals(4, result);
+    }
+
 
 
 }
