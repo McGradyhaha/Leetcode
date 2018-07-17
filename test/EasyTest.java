@@ -84,5 +84,24 @@ public class EasyTest {
         assertEquals(2, result5);
     }
 
+    @Test
+    public void numberOfLinesTest(){
+        int[] width = {4,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10};
+        int[] expected = {2, 4};
+        int[] result = test.numberOfLines(width,"bbbcccdddaaa");
+        assertArrayEquals(expected, result);
+    }
+
+    @Test
+    public void findComplementTest(){
+
+    }
+
+    @Test
+    public void reverseStringTest(){
+        String result = test.reverseString("olleh");
+        assertEquals("hello", result);
+    }
+
 
 }

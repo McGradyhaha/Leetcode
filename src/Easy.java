@@ -357,8 +357,32 @@ public class Easy {
      * @return
      */
     public int[] numberOfLines(int[] widths, String S) {
-        int[] i={};
-        return i;
+
+        int lines = 0;
+        int plus = 0;
+        int[] result =new int[2];
+        char[] sList = S.toCharArray();
+        if(sList.length!=0){
+            lines+=1;
+            for(int i=0; i<sList.length; i++){
+                if(plus + widths[(sList[i] - 'a')]>100){
+                    lines+=1;
+                    plus=0;
+                    i-=1;
+                }
+                else{
+                    plus += widths[(sList[i] - 'a')];
+                }
+            }
+            result[0]=lines;
+            result[1]=plus;
+            return result;
+        }
+        else{
+            result[0]=lines;
+            result[1]=plus;
+            return result;
+        }
 
     }
 
@@ -377,7 +401,6 @@ public class Easy {
      */
     public int findComplement(int num) {
         return  num;
-
     }
 
 
@@ -394,7 +417,12 @@ public class Easy {
      * @return
      */
     public String reverseString(String s) {
-        return s;
+        char[] sList= s.toCharArray();
+        String result = "";
+        for(int i=sList.length-1; i>-1; i--){
+            result+=sList[i];
+        }
+        return result;
     }
 
 
