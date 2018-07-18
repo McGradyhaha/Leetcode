@@ -387,7 +387,7 @@ public class Easy {
     }
 
     /**
-     * 476. Number Complement
+     * 476. Number Complement(Flagged)
      *
      * Question Description
      * Given a positive integer, output its complement number. The complement strategy is to flip the bits of its binary
@@ -400,12 +400,22 @@ public class Easy {
      * @return
      */
     public int findComplement(int num) {
-        return  num;
+
+        int i = 0;
+        int j = 0;
+
+        while (i < num)
+        {
+            i += Math.pow(2, j);
+            j++;
+        }
+
+        return i - num;
     }
 
 
     /**
-     * 344. Reverse String
+     * 344. Reverse String(Flagged)
      *
      * Question Description
      * Write a function that takes a string as input and returns the string reversed.
@@ -416,12 +426,13 @@ public class Easy {
      * @return
      */
     public String reverseString(String s) {
-        char[] sList= s.toCharArray();
-        String result = "";
-        for(int i=sList.length-1; i>-1; i--){
-            result+=sList[i];
+        String reverse = "";
+
+        for(int i = s.length() - 1; i >= 0; i--)
+        {
+            reverse = reverse + s.charAt(i);
         }
-        return result;
+        return reverse;
     }
 
 

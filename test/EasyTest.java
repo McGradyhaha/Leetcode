@@ -94,6 +94,8 @@ public class EasyTest {
 
     @Test
     public void findComplementTest(){
+        int result = test.findComplement(5);
+        assertEquals(2,result);
 
     }
 
@@ -102,6 +104,8 @@ public class EasyTest {
         String result = test.reverseString("olleh");
         assertEquals("hello", result);
     }
+
+
 
 
 }
