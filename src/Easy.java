@@ -400,16 +400,12 @@ public class Easy {
      * @return
      */
     public int findComplement(int num) {
-
         int i = 0;
         int j = 0;
-
-        while (i < num)
-        {
+        while (i < num) {
             i += Math.pow(2, j);
             j++;
         }
-
         return i - num;
     }
 
@@ -434,6 +430,8 @@ public class Easy {
         }
         return reverse;
     }
+
+
 
 
 
