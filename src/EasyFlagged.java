@@ -1,5 +1,4 @@
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 /*
  *
@@ -122,6 +121,49 @@ public class EasyFlagged {
             reverse = reverse + s.charAt(i);
         }
         return reverse;
+    }
+
+    /**
+     * 821. Shortest Distance to a Character（Flagged）
+     *
+     * Question Description:
+     * Given a string S and a character C, return an array of integers representing the shortest distance from the
+     * character C in the string.
+     *
+     * Input: S = "loveleetcode", C = 'e'
+     * Output: [3, 2, 1, 0, 1, 0, 0, 1, 2, 2, 1, 0]
+     *
+     * @param S
+     * @param C
+     * @return
+     */
+    public int[] shortestToChar(String S, char C) {
+        char[] sList = S.toCharArray();
+        int[] iList = new int[sList.length];
+        ArrayList<Integer> target = new ArrayList();
+        for(int i=0; i<sList.length; i++){
+            if(sList[i] == C){
+                target.add(i);
+            }
+        }
+        for(int i=0; i<sList.length; i++){
+            int min = sList.length+1;
+            int temp;
+            if(sList[i]==C){
+                min = 0;
+                iList[i]=min;
+            }
+            else{
+                for(int j=0; j<target.size(); j++){
+                    temp = Math.abs(target.get(j)-i);
+                    if(temp<min){
+                        min=temp;
+                    }
+                }
+                iList[i]=min;
+            }
+        }
+        return iList;
     }
 
 }

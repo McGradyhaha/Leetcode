@@ -42,4 +42,11 @@ import static org.junit.Assert.*;
         String result = test.reverseString("olleh");
         assertEquals("hello", result);
     }
+
+    @Test
+    public void shortestToCharTest(){
+        int[] result = test.shortestToChar("loveleetcode", 'e');
+        int[] expected = {3, 2, 1, 0, 1, 0, 0, 1, 2, 2, 1, 0};
+        assertArrayEquals(expected, result);
+    }
 }
